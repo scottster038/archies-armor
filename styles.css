@@ -1,8 +1,11 @@
 :root {
-  --color-bg: #f7f5f2;
-  --color-text: #2b2b2b;
-  --color-accent: #b5451b;
-  --color-accent-hover: #933a16;
+  --color-bg: #f4f6f9;
+  --color-text: #1b2a41;
+  --color-primary: #1b3a6b;
+  --color-primary-hover: #142c52;
+  --color-secondary: #a6acb4;
+  --color-accent: #c9a24b;
+  --color-accent-hover: #b38c38;
 }
 
 * {
@@ -22,17 +25,26 @@ body {
 .hero {
   text-align: center;
   padding: 3rem 1rem 2rem;
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.logo {
+  width: 140px;
+  height: auto;
+  margin-bottom: 1rem;
 }
 
 .hero h1 {
   margin: 0 0 0.5rem;
   font-size: 2.5rem;
+  color: #fff;
 }
 
 .hero p {
   margin: 0;
   font-size: 1.1rem;
-  color: #555;
+  color: var(--color-secondary);
 }
 
 main {
@@ -44,8 +56,9 @@ main {
 
 .donate-section {
   background: #fff;
+  border: 1px solid var(--color-secondary);
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(27, 58, 107, 0.12);
   padding: 2rem;
   max-width: 480px;
   width: 100%;
@@ -54,6 +67,7 @@ main {
 
 .donate-section h2 {
   margin-top: 0;
+  color: var(--color-primary);
 }
 
 .donate-button {
@@ -61,7 +75,7 @@ main {
   margin-top: 1.5rem;
   padding: 0.85rem 2rem;
   background-color: var(--color-accent);
-  color: #fff;
+  color: var(--color-text);
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1rem;
@@ -78,5 +92,5 @@ footer {
   text-align: center;
   padding: 1rem;
   font-size: 0.85rem;
-  color: #777;
+  color: var(--color-primary);
 }
