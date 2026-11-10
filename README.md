@@ -16,5 +16,4 @@ No build step: plain HTML/CSS/JS. Open `index.html` in a browser to preview.
 | Photos | put them in an `images/` folder and swap out the `.photo-placeholder` div |
 
 ## Custom domain
-When you buy a domain, add it under **Settings → Pages → Custom domain** (GitHub creates a `CNAME` file),
-then update the `og:url` / `og:image` URLs in `index.html`.
+The site is served at https://www.archiesarmor.com (domain registered at Porkbun; the `CNAME` file tells GitHub Pages which domain to use).
