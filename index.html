@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Archie's Armor — Standing strong with Archie</title>
-  <meta name="description" content="Archie's story with CACNA1A, and how you can help. Donations are processed securely through Rare Village Foundation." />
+  <title>Archie's Armor | CACNA1A Rare Disease Advocacy &amp; Hope</title>
+  <meta name="description" content="Archie's story with CACNA1A and his personalized ASO treatment. Donations are processed securely through Rare Village Foundation." />
 
   <!-- Social share preview (Facebook, iMessage, etc.).
        TODO: once you have your domain, change these to absolute URLs on it. -->
   <meta property="og:title" content="Archie's Armor" />
-  <meta property="og:description" content="Help us build Archie's armor. Read his story with CACNA1A and donate through Rare Village Foundation." />
+  <meta property="og:description" content="Help fund personalized genetic medicine for Archie's rare CACNA1A variant." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://scottster038.github.io/archies-armor/" />
   <meta property="og:image" content="https://scottster038.github.io/archies-armor/ArchiesArmorShieldLogo.png" />
@@ -18,34 +18,82 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300&display=swap" rel="stylesheet" />
+  <!-- Icons: browse https://fontawesome.com/search?ic=free and swap the class names -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ───────── Top navigation ───────── -->
-  <header class="site-header">
-    <nav class="nav container" aria-label="Main">
-      <a class="brand" href="#top">
-        <img src="assets/favicon.svg" alt="" width="28" height="31" />
-        <span>Archie’s Armor</span>
+  <!-- ───────── Announcement bar ───────── -->
+  <div class="announce">
+    <span><i class="fa-solid fa-heart"></i> Help us reach our goal for Archie’s customized ASO treatment research!</span>
+    <a href="#donate">Donate Today &rarr;</a>
+  </div>
+
+  <!-- ───────── Navigation ───────── -->
+  <nav class="nav" aria-label="Main">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">
+        <img src="assets/favicon.svg" alt="" width="40" height="44" />
+        <span class="brand-text">
+          <span class="brand-top">ARCHIE’S</span>
+          <span class="brand-bottom">ARMOR</span>
+        </span>
       </a>
-      <ul class="nav-links">
-        <li><a href="#story">Archie’s Story</a></li>
-        <li><a href="#cacna1a">About CACNA1A</a></li>
-        <li><a href="#help">How You Help</a></li>
-      </ul>
-      <a class="btn btn-gold btn-sm" href="#donate" data-donate>Donate</a>
-    </nav>
-  </header>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#home">Home</a>
+        <a href="#story">Archie’s Story</a>
+        <a href="#cacna1a">CACNA1A Gene</a>
+        <a href="#treatment">Treatment &amp; Hope</a>
+        <a href="#impact">Impact</a>
+        <a href="#updates">Updates</a>
+        <a class="btn btn-gold btn-sm" href="#donate" data-donate><i class="fa-solid fa-heart"></i> Donate</a>
+      </div>
+
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
 
   <main id="main">
     <!-- ───────── Hero ───────── -->
-    <section class="hero" id="top">
+    <section class="hero" id="home">
       <div class="container hero-grid">
-        <div class="hero-logo">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="60 0 380 420" role="img" aria-label="Archie's Armor logo">
+        <div class="hero-copy">
+          <div class="pill"><i class="fa-solid fa-shield-halved"></i> Archie’s CACNA1A Variant Journey</div>
+
+          <h1>A Story of Hope &amp; <span class="gold-text">Healing for Archie</span></h1>
+
+          <p class="hero-lead">
+            Standing together to fund personalized genetic medicine (ASO therapy) for
+            Archie’s rare CACNA1A gene mutation, paving the way for rare disease breakthroughs.
+          </p>
+
+          <blockquote class="verse">
+            <p>“Put on all of God’s armor so that you will be able to stand firm…”</p>
+            <cite>Ephesians 6:11</cite>
+          </blockquote>
+
+          <div class="hero-actions">
+            <a class="btn btn-gold btn-lg" href="#donate" data-donate><i class="fa-solid fa-heart"></i> Donate Now</a>
+            <a class="btn btn-dark btn-lg" href="#story">Read Archie’s Story</a>
+          </div>
+
+          <!-- Shown only once the numbers are filled in at the top of script.js -->
+          <div class="hero-stats" data-fund-only hidden>
+            <div><span class="stat-label">Fund Target</span><span class="stat-value" data-stat="goal"></span></div>
+            <div><span class="stat-label">Raised So Far</span><span class="stat-value gold" data-stat="raised"></span></div>
+            <div><span class="stat-label">Supporters</span><span class="stat-value" data-stat="supporters"></span></div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-badge"><i class="fa-solid fa-dna"></i> Targeted ASO Research</div>
+          <svg class="hero-logo" xmlns="http://www.w3.org/2000/svg" viewBox="60 0 380 420" role="img" aria-label="Archie's Armor logo">
             <path class="aa-shield" d="M250 20 C310 48 370 68 417 80 L417 200 C417 290 340 360 250 402 C160 360 83 290 83 200 L83 80 C130 68 190 48 250 20 Z"/>
             <path class="aa-inner" d="M250 37 C305 62 360 80 402 92 L402 200 C402 281 333 345 250 385 C167 345 98 281 98 200 L98 92 C140 80 195 62 250 37 Z"/>
             <text class="aa-script" x="250" y="212" text-anchor="middle" textLength="330" lengthAdjust="spacingAndGlyphs">Archie’s</text>
@@ -54,181 +102,383 @@
             <line class="aa-rule" x1="274" y1="290" x2="340" y2="290"/>
             <path class="aa-heart" d="M250 303 C245 299 235 292 235 284 C235 278 239 275 244 275 C247 275 249 277 250 279 C251 277 253 275 256 275 C261 275 265 278 265 284 C265 292 255 299 250 303 Z"/>
           </svg>
-        </div>
-        <div class="hero-copy">
-          <p class="eyebrow">With love, from Archie’s family</p>
-          <h1>Standing strong with Archie</h1>
-          <!-- TODO: personalize this intro -->
-          <p class="lead">
-            Archie is a joyful, determined little boy living with a rare genetic
-            condition called <strong>CACNA1A</strong>. Every therapy session, every
-            appointment, every small victory is part of the armor we’re building
-            around him — and you can help.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-gold" href="#donate" data-donate>Donate to Archie’s Armor</a>
-            <a class="btn btn-ghost" href="#story">Read Archie’s story</a>
+          <h2>Fighting CACNA1A</h2>
+          <p>Custom oligonucleotide therapy (ASO) developed by the n-Lorem Foundation gives Archie a chance for a healthier future.</p>
+
+          <div class="progress-block" data-fund-only hidden>
+            <div class="progress-labels">
+              <span>Fundraising Progress</span>
+              <span class="gold"><span data-stat="percent"></span> Complete</span>
+            </div>
+            <div class="progress"><div class="progress-fill" data-progress></div></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ───────── Archie's Story ───────── -->
-    <section class="section" id="story">
-      <div class="container story-grid">
-        <div>
-          <p class="eyebrow">Archie’s Story</p>
-          <h2>Meet Archie</h2>
-          <!-- TODO: replace these paragraphs with Archie's real story -->
-          <p>
-            [Tell visitors who Archie is — his age, his personality, what makes him
-            laugh, what he loves. Lead with joy; this is the part people remember.]
-          </p>
-          <p>
-            [Describe the road to diagnosis — when you first noticed something was
-            different, the appointments and tests, and the day you heard the word
-            “CACNA1A.”]
-          </p>
-          <p>
-            [Share what daily life looks like now — therapies, equipment, specialists,
-            and the wins worth celebrating.]
-          </p>
-        </div>
-        <figure class="photo">
-          <!-- TODO: add a photo, e.g. <img src="images/archie-1.jpg" alt="Archie smiling at the park" /> -->
-          <div class="photo-placeholder">Photo of Archie</div>
-          <figcaption>[Caption for the photo]</figcaption>
-        </figure>
-      </div>
-
-      <!-- Timeline: add, remove or reorder <li> items freely -->
+    <section class="section section-white" id="story">
       <div class="container">
-        <ol class="timeline">
-          <li>
-            <span class="timeline-date">[Month Year]</span>
-            <h3>Archie is born</h3>
-            <p>[A sentence or two.]</p>
+        <header class="section-head">
+          <span class="kicker">Meet Our Superhero</span>
+          <h2>Archie’s Story &amp; Journey</h2>
+          <div class="divider"></div>
+          <p>Every parent expects challenges, but nothing prepares you to hear that a single letter in your child’s DNA is changed.</p>
+        </header>
+
+        <div class="story-grid">
+          <div class="story-side">
+            <figure class="photo-frame">
+              <!-- TODO: replace this placeholder with a real photo:
+                   <img src="images/archie.jpg" alt="Archie smiling" /> -->
+              <div class="photo-placeholder">
+                <div class="photo-icon"><i class="fa-solid fa-child-reaching"></i></div>
+                <h3>Archie</h3>
+                <span class="kicker">Warrior &amp; Inspiration</span>
+                <p>Spirited, resilient, and smiling through neurological therapy appointments and lab evaluations.</p>
+              </div>
+            </figure>
+
+            <blockquote class="quote-card">
+              <i class="fa-solid fa-quote-left"></i>
+              <div>
+                <p>“Archie lights up every room he enters. His laughter reminds us why we fight so hard every single day to give him the treatment he deserves.”</p>
+                <cite>The Family</cite>
+              </div>
+            </blockquote>
+          </div>
+
+          <div class="story-text">
+            <!-- TODO: confirm these details are accurate for Archie -->
+            <h3>The Diagnosis &amp; The Search for Answers</h3>
+            <p>
+              From early infancy, Archie showed subtle developmental delays and unexpected
+              neurological symptoms. After months of medical testing, consultations with
+              specialists, and whole genome sequencing, we received the diagnosis: Archie has
+              a rare, de novo mutation in the <strong>CACNA1A gene</strong>.
+            </p>
+            <p>
+              The CACNA1A gene provides instructions for making a key subunit of the CaV2.1
+              calcium channel, vital for normal communication between brain cells. Archie’s
+              specific variant disrupts this delicate signaling pathway, leading to challenges
+              with motor function, speech, and potential seizure activity.
+            </p>
+
+            <div class="mini-cards">
+              <div class="mini-card">
+                <h4><i class="fa-solid fa-dna"></i> Rare DNA Variant</h4>
+                <p>Archie’s single nucleotide change requires targeted personalized medicine rather than standard off-the-shelf pharmaceuticals.</p>
+              </div>
+              <div class="mini-card">
+                <h4><i class="fa-solid fa-flask-vial"></i> ASO Breakthrough</h4>
+                <p>Working with the n-Lorem Foundation to design a custom antisense oligonucleotide (ASO) to silence or correct the faulty gene copy.</p>
+              </div>
+            </div>
+
+            <h3>Putting on Archie’s Armor</h3>
+            <p>
+              We created <strong>Archie’s Armor</strong> to rally family, friends, and supporters
+              around Archie’s journey. Just as armor protects in battle, our mission is to wrap
+              Archie in love, spiritual strength, cutting-edge medical science, and financial
+              support for his personalized treatment program.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Understanding CACNA1A ───────── -->
+    <section class="section section-grey" id="cacna1a">
+      <div class="container">
+        <header class="section-head">
+          <span class="kicker">Medical Science</span>
+          <h2>Understanding CACNA1A</h2>
+          <div class="divider"></div>
+          <p>What is the CACNA1A gene, how does it function, and why are targeted genetic therapies so transformational?</p>
+        </header>
+
+        <div class="cards-3">
+          <article class="card">
+            <div class="card-icon navy"><i class="fa-solid fa-microscope"></i></div>
+            <h3>Calcium Channels</h3>
+            <p>The CACNA1A gene encodes the alpha-1A subunit of the CaV2.1 P/Q-type voltage-gated calcium channel, controlling neurotransmitter release in brain neurons.</p>
+            <div class="card-foot">Crucial for brain communication &rarr;</div>
+          </article>
+          <article class="card">
+            <div class="card-icon gold"><i class="fa-solid fa-sliders"></i></div>
+            <h3>Variants &amp; Function</h3>
+            <p>Mutations can be “gain-of-function” (an overactive channel) or “loss-of-function” (an underactive channel). Identifying Archie’s exact variant is key to tailoring treatment.</p>
+            <div class="card-foot">Precision variant mapping &rarr;</div>
+          </article>
+          <article class="card">
+            <div class="card-icon navy"><i class="fa-solid fa-vial-circle-check"></i></div>
+            <h3>Targeted ASO Therapy</h3>
+            <p>Antisense oligonucleotides (ASOs) are short synthetic strands of nucleic acid designed to bind specifically to mutant mRNA to normalize protein expression.</p>
+            <div class="card-foot">n-Lorem nano-rare program &rarr;</div>
+          </article>
+        </div>
+
+        <div class="compare">
+          <h3>Comparing Traditional vs. Personalized Genetic Medicine</h3>
+          <div class="compare-grid">
+            <div class="compare-col bad">
+              <h4><i class="fa-solid fa-pills"></i> Standard Symptom Management</h4>
+              <ul>
+                <li><i class="fa-solid fa-xmark"></i> Treats symptoms (seizures, ataxia) without addressing the underlying DNA cause.</li>
+                <li><i class="fa-solid fa-xmark"></i> Trial-and-error medication cycles with significant side effects.</li>
+                <li><i class="fa-solid fa-xmark"></i> Not specific to individual CACNA1A single-letter mutations.</li>
+              </ul>
+            </div>
+            <div class="compare-col good">
+              <h4><i class="fa-solid fa-bullseye"></i> Custom ASO Therapy (Archie’s Plan)</h4>
+              <ul>
+                <li><i class="fa-solid fa-check"></i> Specifically targets Archie’s exact genetic mutation sequence.</li>
+                <li><i class="fa-solid fa-check"></i> Designed to restore proper calcium channel function in neurons.</li>
+                <li><i class="fa-solid fa-check"></i> Discovery and development provided free by n-Lorem; the family funds hospital delivery and administration.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Treatment roadmap ───────── -->
+    <section class="section section-white" id="treatment">
+      <div class="container">
+        <header class="section-head">
+          <span class="kicker">The Roadmap to Healing</span>
+          <h2>Treatment, Research &amp; ASO Progress</h2>
+          <div class="divider"></div>
+          <p>Developing a personalized medicine requires meticulous research, laboratory validation, and hospital-based intrathecal administration.</p>
+        </header>
+
+        <!-- To update progress: change each step's class (done / current / next)
+             and its status label. -->
+        <ol class="roadmap">
+          <li class="done">
+            <div class="roadmap-marker"><i class="fa-solid fa-check"></i></div>
+            <div class="roadmap-body">
+              <span class="status">Completed</span>
+              <h3>1. Genetic Diagnosis &amp; n-Lorem Acceptance</h3>
+              <p>Whole genome sequencing confirmed Archie’s CACNA1A variant. Accepted into the n-Lorem Foundation’s nano-rare discovery pipeline.</p>
+            </div>
           </li>
-          <li>
-            <span class="timeline-date">[Month Year]</span>
-            <h3>First signs</h3>
-            <p>[A sentence or two.]</p>
+          <li class="current">
+            <div class="roadmap-marker">2</div>
+            <div class="roadmap-body">
+              <span class="status">In Progress</span>
+              <h3>2. ASO Design &amp; iPSC Cell Testing</h3>
+              <p>Scientists synthesize candidate ASO sequences and test them in cell models derived from Archie’s own stem cells to find the best candidate.</p>
+            </div>
           </li>
-          <li>
-            <span class="timeline-date">[Month Year]</span>
-            <h3>Diagnosis: CACNA1A</h3>
-            <p>[A sentence or two.]</p>
+          <li class="next">
+            <div class="roadmap-marker">3</div>
+            <div class="roadmap-body">
+              <span class="status">Next Step</span>
+              <h3>3. FDA IND Application &amp; Safety Clearance</h3>
+              <p>Filing an Investigational New Drug (IND) application with the FDA for patient-specific approval.</p>
+            </div>
           </li>
-          <li>
-            <span class="timeline-date">Today</span>
-            <h3>Building his armor</h3>
-            <p>[A sentence or two.]</p>
+          <li class="next">
+            <div class="roadmap-marker">4</div>
+            <div class="roadmap-body">
+              <span class="status">Future Milestone</span>
+              <h3>4. Hospital Administration &amp; Monitoring</h3>
+              <p>Intrathecal administration of the ASO therapy at a specialized pediatric neurology center, followed by clinical evaluation.</p>
+            </div>
           </li>
         </ol>
-      </div>
-    </section>
 
-    <!-- ───────── About CACNA1A ───────── -->
-    <section class="section section-tint" id="cacna1a">
-      <div class="container narrow">
-        <p class="eyebrow">Understanding the diagnosis</p>
-        <h2>What is CACNA1A?</h2>
-        <p>
-          <strong>CACNA1A</strong> is a gene that gives the body instructions for building
-          part of a calcium channel found on nerve cells in the brain. These channels
-          help neurons send signals to one another. When the gene has a change (a
-          “variant”), those signals can be disrupted.
-        </p>
-        <p>
-          CACNA1A-related disorders are rare and look different in every child. They
-          can affect:
-        </p>
-        <ul class="chips">
-          <li>Balance &amp; coordination (ataxia)</li>
-          <li>Muscle tone</li>
-          <li>Eye movements</li>
-          <li>Speech &amp; development</li>
-          <li>Seizures</li>
-          <li>Hemiplegic migraine</li>
-        </ul>
-        <p>
-          <!-- TODO: describe how CACNA1A affects Archie specifically -->
-          [For Archie, CACNA1A means … ]
-        </p>
-        <p class="muted">
-          Want to learn more? The
-          <a href="https://cacna1a.org" target="_blank" rel="noopener noreferrer">CACNA1A Foundation</a>
-          supports families and funds research into these disorders.
-        </p>
-      </div>
-    </section>
-
-    <!-- ───────── How your gift helps ───────── -->
-    <section class="section" id="help">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Your impact</p>
-          <h2>How your gift helps</h2>
+        <div class="funding-panel">
+          <div>
+            <span class="kicker">Where Your Donations Go</span>
+            <h3>How Funding Supports Archie’s Care</h3>
+            <p>
+              While n-Lorem generously absorbs the discovery and synthesis cost of the ASO
+              molecule, the family is responsible for hospital administration, specialized
+              neurological monitoring, biomarker studies, and travel to clinical centers.
+            </p>
+            <div class="funding-items">
+              <div><strong>Intrathecal Procedures</strong><span>Hospital lumbar punctures &amp; sedation</span></div>
+              <div><strong>Longitudinal Monitoring</strong><span>EEG, MRI &amp; bio-sample labs</span></div>
+            </div>
+          </div>
+          <div class="goal-card">
+            <div data-fund-only hidden>
+              <span class="stat-label">Estimated Hospital &amp; Clinical Goal</span>
+              <div class="goal-amount" data-stat="goal"></div>
+            </div>
+            <p>Donations to Archie’s fund support his treatment, clinical visits, and therapy needs.</p>
+            <a class="btn btn-gold btn-block" href="#donate" data-donate>Support Archie Today</a>
+          </div>
         </div>
-        <!-- TODO: adjust these to match how Archie's fund is actually used -->
-        <div class="cards">
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg>
-            </div>
-            <h3>Therapies &amp; care</h3>
-            <p>Physical, occupational, and speech therapy that help Archie grow stronger every week.</p>
+      </div>
+    </section>
+
+    <!-- ───────── Impact & community ───────── -->
+    <section class="section section-navy" id="impact">
+      <div class="container">
+        <header class="section-head">
+          <span class="kicker">Our Shared Strength</span>
+          <h2>Impact &amp; Community Advocacy</h2>
+          <div class="divider"></div>
+        </header>
+
+        <div class="impact-stats" data-fund-only hidden>
+          <div class="impact-stat"><span data-stat="raised"></span><small>Funds Raised to Date</small></div>
+          <div class="impact-stat"><span data-stat="supporters"></span><small>Community Supporters</small></div>
+          <div class="impact-stat"><span data-stat="goal"></span><small>Our Goal</small></div>
+        </div>
+
+        <div class="resource-banner">
+          <div class="resource-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
+          <div>
+            <h4>Connect with the CACNA1A Foundation</h4>
+            <p>Learn more about research initiatives, clinical trial networks, and family support groups.</p>
+          </div>
+          <a class="btn btn-white btn-sm" href="https://www.cacna1a.org" target="_blank" rel="noopener noreferrer">
+            Visit CACNA1A.org <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Updates journal ───────── -->
+    <section class="section section-light" id="updates">
+      <div class="container">
+        <header class="updates-head">
+          <div>
+            <span class="kicker">Family Journal</span>
+            <h2>Latest Updates on Archie</h2>
+          </div>
+          <p>Follow along as we post milestones, clinical progress reports, and family moments.</p>
+        </header>
+
+        <!-- To add an update: copy one <article> block, put the newest first.
+             The text inside <details> shows when someone clicks "Read Full Journal". -->
+        <div class="cards-3">
+          <article class="card update">
+            <div class="update-meta"><span class="tag">Research Update</span> • <time>[Month Day, Year]</time></div>
+            <h3>[Update title]</h3>
+            <p>[One- or two-sentence summary of the update.]</p>
+            <details>
+              <summary>Read Full Journal <i class="fa-solid fa-chevron-right"></i></summary>
+              <p>[The full update goes here.]</p>
+            </details>
           </article>
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 18h16M6 18V9l6-4 6 4v9M10 18v-5h4v5"/></svg>
-            </div>
-            <h3>Equipment &amp; access</h3>
-            <p>Adaptive equipment, mobility aids, and home modifications insurance doesn’t cover.</p>
+          <article class="card update">
+            <div class="update-meta"><span class="tag">Community Event</span> • <time>[Month Day, Year]</time></div>
+            <h3>[Update title]</h3>
+            <p>[One- or two-sentence summary of the update.]</p>
+            <details>
+              <summary>Read Full Journal <i class="fa-solid fa-chevron-right"></i></summary>
+              <p>[The full update goes here.]</p>
+            </details>
           </article>
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3"/></svg>
-            </div>
-            <h3>Specialists &amp; travel</h3>
-            <p>Visits to the specialists who understand rare conditions like CACNA1A — often far from home.</p>
+          <article class="card update">
+            <div class="update-meta"><span class="tag">Therapy Milestone</span> • <time>[Month Day, Year]</time></div>
+            <h3>[Update title]</h3>
+            <p>[One- or two-sentence summary of the update.]</p>
+            <details>
+              <summary>Read Full Journal <i class="fa-solid fa-chevron-right"></i></summary>
+              <p>[The full update goes here.]</p>
+            </details>
           </article>
         </div>
       </div>
     </section>
 
     <!-- ───────── Donate ───────── -->
-    <section class="donate-band" id="donate">
-      <div class="container narrow center">
-        <svg class="donate-heart" viewBox="235 274 30 30" aria-hidden="true">
-          <path d="M250 303 C245 299 235 292 235 284 C235 278 239 275 244 275 C247 275 249 277 250 279 C251 277 253 275 256 275 C261 275 265 278 265 284 C265 292 255 299 250 303 Z"/>
-        </svg>
-        <h2>Help build Archie’s armor</h2>
-        <p>
-          Every gift, of any size, makes a difference. Donations are processed
-          securely by <strong>Rare Village Foundation</strong>, which manages
-          Archie’s fund.
-          <!-- TODO: confirm with Rare Village whether gifts are tax-deductible, then you can add:
-               "Rare Village Foundation is a 501(c)(3) nonprofit, so your gift may be tax-deductible." -->
-        </p>
-        <a class="btn btn-gold btn-lg" href="#donate" data-donate>
-          Donate through Rare Village
-        </a>
-        <p class="fine-print">You’ll be taken to Rare Village’s secure donation page.</p>
+    <section class="section section-white donate-section" id="donate">
+      <div class="container donate-grid">
+        <div class="donate-card">
+          <div class="donate-title">
+            <div class="donate-icon"><i class="fa-solid fa-shield-heart"></i></div>
+            <div>
+              <h3>Make a Donation</h3>
+              <p>Every gift goes to Archie’s fund at Rare Village Foundation</p>
+              <!-- TODO: once Rare Village confirms gifts are tax-deductible, you can say so here -->
+            </div>
+          </div>
 
-        <div class="share">
-          <p>Can’t give right now? Sharing Archie’s story helps just as much.</p>
-          <button class="btn btn-ghost-light" type="button" id="share-button">Share this page</button>
-          <span class="share-status" id="share-status" role="status"></span>
+          <p>
+            Donations are processed securely by <strong>Rare Village Foundation</strong>, which
+            manages Archie’s fund. You can choose any amount on their donation page, and every
+            gift, large or small, helps put on Archie’s armor.
+          </p>
+
+          <!-- TODO: once you've seen Rare Village's donation page, add what it offers
+               (e.g. email receipts, recurring gifts) to this list -->
+          <ul class="trust-list">
+            <li><i class="fa-solid fa-lock"></i> Secure payment handled by Rare Village</li>
+            <li><i class="fa-solid fa-hand-holding-heart"></i> Give any amount you choose</li>
+          </ul>
+
+          <a class="btn btn-gold btn-lg btn-block" href="#donate" data-donate>
+            <i class="fa-solid fa-heart"></i> Donate through Rare Village
+          </a>
+          <p class="fine-print"><i class="fa-solid fa-shield-halved"></i> You’ll be taken to Rare Village’s secure donation page.</p>
+        </div>
+
+        <div class="donate-side">
+          <div class="share-card">
+            <div class="share-icon"><i class="fa-solid fa-share-nodes"></i></div>
+            <h3>Spread the Word</h3>
+            <p>Can’t give right now? Sharing Archie’s story with friends and family helps just as much.</p>
+            <button class="btn btn-gold btn-block" type="button" id="share-button">Share Archie’s Story</button>
+            <span class="share-status" id="share-status" role="status"></span>
+          </div>
+
+          <!-- Shown only once contactEmail is set at the top of script.js -->
+          <div class="contact-card" data-contact hidden>
+            <div>
+              <h4>Have Questions or Want to Help?</h4>
+              <p>Reach out directly to Archie’s family</p>
+            </div>
+            <a class="btn btn-navy btn-sm" href="#" data-contact-link>Contact Us</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <img src="assets/favicon.svg" alt="" width="24" height="27" />
+  <!-- ───────── Footer ───────── -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/favicon.svg" alt="" width="32" height="36" />
+          <span>ARCHIE’S ARMOR</span>
+        </div>
+        <p>Dedicated to funding customized antisense oligonucleotide (ASO) research and care for Archie’s rare CACNA1A variant.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#story">Archie’s Story</a></li>
+          <li><a href="#cacna1a">Understanding CACNA1A</a></li>
+          <li><a href="#treatment">ASO Treatment Roadmap</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partners &amp; Resources</h4>
+        <ul>
+          <li><a href="https://www.nlorem.org" target="_blank" rel="noopener noreferrer">n-Lorem Foundation</a></li>
+          <li><a href="https://www.cacna1a.org" target="_blank" rel="noopener noreferrer">CACNA1A Foundation</a></li>
+          <li><a href="#updates">Family Update Journal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Scripture Anchor</h4>
+        <p class="footer-verse">“Put on all of God’s armor so that you will be able to stand firm against all strategies of the devil.”</p>
+        <span class="footer-cite">Ephesians 6:11 (NLT)</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">
       <p>&copy; <span id="year"></span> Archie’s Armor. Made with love by Archie’s family.</p>
+      <!-- TODO: add social links when ready, e.g.
+           <a href="https://facebook.com/..." aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a> -->
     </div>
   </footer>
 

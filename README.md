@@ -6,8 +6,10 @@ No build step: plain HTML/CSS/JS. Open `index.html` in a browser to preview.
 ## Where to edit
 | What | File |
 |---|---|
-| Story, timeline, CACNA1A text, "how your gift helps" cards | `index.html` (look for `TODO` and `[bracketed]` placeholders) |
-| Rare Village donation link (updates every Donate button) | `DONATE_URL` at the top of `script.js` |
+| Story, CACNA1A text, roadmap text | `index.html` (look for `TODO` and `[bracketed]` placeholders) |
+| Donation link, fundraising goal/raised/supporters, contact email | `SITE` settings at the top of `script.js` (stats stay hidden until filled in) |
+| Treatment roadmap progress | in `index.html`, change each step's class to `done`, `current` or `next` |
+| Family updates | copy an `<article>` block in the Updates section of `index.html` |
 | Colors and fonts | variables at the top of `styles.css` |
 | Logo (vector) | `assets/archies-armor-logo.svg` (also inlined in the hero of `index.html`) |
 | Browser tab icon | `assets/favicon.svg` |
