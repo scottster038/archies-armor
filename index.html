@@ -3,42 +3,233 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Archie's Armor</title>
+  <title>Archie's Armor — Standing strong with Archie</title>
+  <meta name="description" content="Archie's story with CACNA1A, and how you can help. Donations are processed securely through Rare Village Foundation." />
+
+  <!-- Social share preview (Facebook, iMessage, etc.).
+       TODO: once you have your domain, change these to absolute URLs on it. -->
+  <meta property="og:title" content="Archie's Armor" />
+  <meta property="og:description" content="Help us build Archie's armor. Read his story with CACNA1A and donate through Rare Village Foundation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://scottster038.github.io/archies-armor/" />
+  <meta property="og:image" content="https://scottster038.github.io/archies-armor/ArchiesArmorShieldLogo.png" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="hero">
-    <img
-      class="logo"
-      src="ArchiesArmorShieldLogo.png"
-      alt="Archie's Armor shield logo"
-    />
-    <h1>Archie's Armor</h1>
-    <p>Help support Archie's Armor with a donation.</p>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ───────── Top navigation ───────── -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main">
+      <a class="brand" href="#top">
+        <img src="assets/favicon.svg" alt="" width="28" height="31" />
+        <span>Archie’s Armor</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#story">Archie’s Story</a></li>
+        <li><a href="#cacna1a">About CACNA1A</a></li>
+        <li><a href="#help">How You Help</a></li>
+      </ul>
+      <a class="btn btn-gold btn-sm" href="#donate" data-donate>Donate</a>
+    </nav>
   </header>
 
-  <main>
-    <section class="donate-section">
-      <h2>Make a Donation</h2>
-      <p>
-        Donations are collected through our Rare Village account.
-        Click the button below to donate.
-      </p>
-      <!-- TODO: replace with the real Rare Village donation URL -->
-      <a
-        id="donate-button"
-        class="donate-button"
-        href="https://www.google.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Donate Now
-      </a>
+  <main id="main">
+    <!-- ───────── Hero ───────── -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="60 0 380 420" role="img" aria-label="Archie's Armor logo">
+            <path class="aa-shield" d="M250 20 C310 48 370 68 417 80 L417 200 C417 290 340 360 250 402 C160 360 83 290 83 200 L83 80 C130 68 190 48 250 20 Z"/>
+            <path class="aa-inner" d="M250 37 C305 62 360 80 402 92 L402 200 C402 281 333 345 250 385 C167 345 98 281 98 200 L98 92 C140 80 195 62 250 37 Z"/>
+            <text class="aa-script" x="250" y="212" text-anchor="middle" textLength="330" lengthAdjust="spacingAndGlyphs">Archie’s</text>
+            <text class="aa-caps" x="250" y="268" text-anchor="middle" textLength="200" lengthAdjust="spacing">ARMOR</text>
+            <line class="aa-rule" x1="160" y1="290" x2="226" y2="290"/>
+            <line class="aa-rule" x1="274" y1="290" x2="340" y2="290"/>
+            <path class="aa-heart" d="M250 303 C245 299 235 292 235 284 C235 278 239 275 244 275 C247 275 249 277 250 279 C251 277 253 275 256 275 C261 275 265 278 265 284 C265 292 255 299 250 303 Z"/>
+          </svg>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">With love, from Archie’s family</p>
+          <h1>Standing strong with Archie</h1>
+          <!-- TODO: personalize this intro -->
+          <p class="lead">
+            Archie is a joyful, determined little boy living with a rare genetic
+            condition called <strong>CACNA1A</strong>. Every therapy session, every
+            appointment, every small victory is part of the armor we’re building
+            around him — and you can help.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#donate" data-donate>Donate to Archie’s Armor</a>
+            <a class="btn btn-ghost" href="#story">Read Archie’s story</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Archie's Story ───────── -->
+    <section class="section" id="story">
+      <div class="container story-grid">
+        <div>
+          <p class="eyebrow">Archie’s Story</p>
+          <h2>Meet Archie</h2>
+          <!-- TODO: replace these paragraphs with Archie's real story -->
+          <p>
+            [Tell visitors who Archie is — his age, his personality, what makes him
+            laugh, what he loves. Lead with joy; this is the part people remember.]
+          </p>
+          <p>
+            [Describe the road to diagnosis — when you first noticed something was
+            different, the appointments and tests, and the day you heard the word
+            “CACNA1A.”]
+          </p>
+          <p>
+            [Share what daily life looks like now — therapies, equipment, specialists,
+            and the wins worth celebrating.]
+          </p>
+        </div>
+        <figure class="photo">
+          <!-- TODO: add a photo, e.g. <img src="images/archie-1.jpg" alt="Archie smiling at the park" /> -->
+          <div class="photo-placeholder">Photo of Archie</div>
+          <figcaption>[Caption for the photo]</figcaption>
+        </figure>
+      </div>
+
+      <!-- Timeline: add, remove or reorder <li> items freely -->
+      <div class="container">
+        <ol class="timeline">
+          <li>
+            <span class="timeline-date">[Month Year]</span>
+            <h3>Archie is born</h3>
+            <p>[A sentence or two.]</p>
+          </li>
+          <li>
+            <span class="timeline-date">[Month Year]</span>
+            <h3>First signs</h3>
+            <p>[A sentence or two.]</p>
+          </li>
+          <li>
+            <span class="timeline-date">[Month Year]</span>
+            <h3>Diagnosis: CACNA1A</h3>
+            <p>[A sentence or two.]</p>
+          </li>
+          <li>
+            <span class="timeline-date">Today</span>
+            <h3>Building his armor</h3>
+            <p>[A sentence or two.]</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ───────── About CACNA1A ───────── -->
+    <section class="section section-tint" id="cacna1a">
+      <div class="container narrow">
+        <p class="eyebrow">Understanding the diagnosis</p>
+        <h2>What is CACNA1A?</h2>
+        <p>
+          <strong>CACNA1A</strong> is a gene that gives the body instructions for building
+          part of a calcium channel found on nerve cells in the brain. These channels
+          help neurons send signals to one another. When the gene has a change (a
+          “variant”), those signals can be disrupted.
+        </p>
+        <p>
+          CACNA1A-related disorders are rare and look different in every child. They
+          can affect:
+        </p>
+        <ul class="chips">
+          <li>Balance &amp; coordination (ataxia)</li>
+          <li>Muscle tone</li>
+          <li>Eye movements</li>
+          <li>Speech &amp; development</li>
+          <li>Seizures</li>
+          <li>Hemiplegic migraine</li>
+        </ul>
+        <p>
+          <!-- TODO: describe how CACNA1A affects Archie specifically -->
+          [For Archie, CACNA1A means … ]
+        </p>
+        <p class="muted">
+          Want to learn more? The
+          <a href="https://cacna1a.org" target="_blank" rel="noopener noreferrer">CACNA1A Foundation</a>
+          supports families and funds research into these disorders.
+        </p>
+      </div>
+    </section>
+
+    <!-- ───────── How your gift helps ───────── -->
+    <section class="section" id="help">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Your impact</p>
+          <h2>How your gift helps</h2>
+        </div>
+        <!-- TODO: adjust these to match how Archie's fund is actually used -->
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg>
+            </div>
+            <h3>Therapies &amp; care</h3>
+            <p>Physical, occupational, and speech therapy that help Archie grow stronger every week.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 18h16M6 18V9l6-4 6 4v9M10 18v-5h4v5"/></svg>
+            </div>
+            <h3>Equipment &amp; access</h3>
+            <p>Adaptive equipment, mobility aids, and home modifications insurance doesn’t cover.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3"/></svg>
+            </div>
+            <h3>Specialists &amp; travel</h3>
+            <p>Visits to the specialists who understand rare conditions like CACNA1A — often far from home.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Donate ───────── -->
+    <section class="donate-band" id="donate">
+      <div class="container narrow center">
+        <svg class="donate-heart" viewBox="235 274 30 30" aria-hidden="true">
+          <path d="M250 303 C245 299 235 292 235 284 C235 278 239 275 244 275 C247 275 249 277 250 279 C251 277 253 275 256 275 C261 275 265 278 265 284 C265 292 255 299 250 303 Z"/>
+        </svg>
+        <h2>Help build Archie’s armor</h2>
+        <p>
+          Every gift, of any size, makes a difference. Donations are processed
+          securely by <strong>Rare Village Foundation</strong>, which manages
+          Archie’s fund.
+          <!-- TODO: confirm with Rare Village whether gifts are tax-deductible, then you can add:
+               "Rare Village Foundation is a 501(c)(3) nonprofit, so your gift may be tax-deductible." -->
+        </p>
+        <a class="btn btn-gold btn-lg" href="#donate" data-donate>
+          Donate through Rare Village
+        </a>
+        <p class="fine-print">You’ll be taken to Rare Village’s secure donation page.</p>
+
+        <div class="share">
+          <p>Can’t give right now? Sharing Archie’s story helps just as much.</p>
+          <button class="btn btn-ghost-light" type="button" id="share-button">Share this page</button>
+          <span class="share-status" id="share-status" role="status"></span>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Archie's Armor</p>
+  <footer class="site-footer">
+    <div class="container">
+      <img src="assets/favicon.svg" alt="" width="24" height="27" />
+      <p>&copy; <span id="year"></span> Archie’s Armor. Made with love by Archie’s family.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>

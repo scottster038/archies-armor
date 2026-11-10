@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="60 0 380 420" role="img" aria-labelledby="aa-logo-title">
+  <title id="aa-logo-title">Archie's Armor</title>
+  <!--
+    Vector recreation of ArchiesArmorShieldLogo.png.
+    Text is live text using Google Fonts (Great Vibes + Montserrat), so it renders
+    correctly when this SVG is inlined in a page that loads those fonts.
+    If you open this file on its own, the @import below loads them.
+  -->
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&amp;family=Montserrat:wght@300&amp;display=swap");
+    .aa-navy  { fill: none; stroke: #1b3a6b; stroke-width: 6; stroke-linejoin: round; }
+    .aa-grey  { fill: none; stroke: #a6acb4; stroke-width: 3; stroke-linejoin: round; }
+    .aa-script { font-family: "Great Vibes", "Brush Script MT", cursive; font-size: 112px; fill: #1b3a6b;
+                 stroke: #fff; stroke-width: 10px; paint-order: stroke; stroke-linejoin: round; }
+    .aa-caps  { font-family: "Montserrat", "Segoe UI", Arial, sans-serif; font-weight: 300; font-size: 40px; fill: #1b3a6b; }
+    .aa-rule  { stroke: #a6acb4; stroke-width: 2.5; }
+    .aa-heart { fill: #c9a24b; }
+  </style>
+
+  <!-- Shield: white fill, navy outer line, grey inner line -->
+  <path fill="#fff" class="aa-navy"
+        d="M250 20 C310 48 370 68 417 80 L417 200 C417 290 340 360 250 402 C160 360 83 290 83 200 L83 80 C130 68 190 48 250 20 Z"/>
+  <path class="aa-grey"
+        d="M250 37 C305 62 360 80 402 92 L402 200 C402 281 333 345 250 385 C167 345 98 281 98 200 L98 92 C140 80 195 62 250 37 Z"/>
+
+  <!-- "Archie's" in script; white stroke knocks out the shield lines behind it -->
+  <text class="aa-script" x="250" y="212" text-anchor="middle"
+        textLength="330" lengthAdjust="spacingAndGlyphs">Archie’s</text>
+
+  <!-- "ARMOR" -->
+  <text class="aa-caps" x="250" y="268" text-anchor="middle"
+        textLength="200" lengthAdjust="spacing">ARMOR</text>
+
+  <!-- Divider with gold heart -->
+  <line class="aa-rule" x1="160" y1="290" x2="226" y2="290"/>
+  <line class="aa-rule" x1="274" y1="290" x2="340" y2="290"/>
+  <path class="aa-heart"
+        d="M250 303 C245 299 235 292 235 284 C235 278 239 275 244 275 C247 275 249 277 250 279 C251 277 253 275 256 275 C261 275 265 278 265 284 C265 292 255 299 250 303 Z"/>
+</svg>
