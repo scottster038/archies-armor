@@ -9,7 +9,7 @@ No build step: plain HTML/CSS/JS. Open `index.html` in a browser to preview.
 | Story, CACNA1A text, roadmap text | `index.html` (look for `TODO` and `[bracketed]` placeholders) |
 | Donation link, fundraising goal/raised/supporters, contact email | `SITE` settings at the top of `script.js` (stats stay hidden until filled in) |
 | Treatment roadmap progress | in `index.html`, change each step's class to `done`, `current` or `next` |
-| Family updates | copy an `<article>` block in the Updates section of `index.html` |
+| Family updates | add a row to the family Google Sheet (Date, Category, Title, Summary, Full update, Show). The site reads it via `updatesCsvUrl` in `script.js`. Set Show to "No" to hide a row; blank lines in "Full update" become paragraphs. |
 | Colors and fonts | variables at the top of `styles.css` |
 | Logo (vector) | `assets/archies-armor-logo.svg` (also inlined in the hero of `index.html`) |
 | Browser tab icon | `assets/favicon.svg` |
