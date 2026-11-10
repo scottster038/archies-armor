@@ -1,0 +1,4 @@
+# GitHub Pages (Jekyll) settings.
+# Keep the README off the public website.
+exclude:
+  - README.md

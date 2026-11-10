@@ -1,6 +1,4 @@
-// ─────────────────────────────────────────────────────────────
 // Site settings: edit these in one place.
-// ─────────────────────────────────────────────────────────────
 const SITE = {
   // Archie's Rare Village donation page. Every Donate button links here.
   // While empty, Donate buttons just scroll to the Donate section.
@@ -13,7 +11,7 @@ const SITE = {
   supporters: null,
 
   // Shows the "Contact Us" card when set, e.g. "family@example.com".
-  contactEmail: "",
+  contactEmail: "family@archiesarmor.com",
 
   // Family Journal: the Google Sheet's "Publish to web" CSV link
   // (File → Share → Publish to web → choose the sheet → "Comma-separated values (.csv)").
@@ -23,7 +21,6 @@ const SITE = {
   // How many updates to show before the "View all updates" button.
   updatesToShow: 3,
 };
-// ─────────────────────────────────────────────────────────────
 
 // Donate buttons → Rare Village
 if (SITE.donateUrl) {
@@ -75,9 +72,7 @@ navLinks.querySelectorAll("a").forEach((a) =>
   })
 );
 
-// ─────────────────────────────────────────────────────────────
 // Family Journal: load updates from the Google Sheet
-// ─────────────────────────────────────────────────────────────
 
 // Turns CSV text into rows of cells (handles quotes, commas and line breaks inside cells).
 function parseCsv(text) {

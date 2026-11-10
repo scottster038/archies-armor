@@ -1,6 +1,4 @@
-/* ─────────────────────────────────────────────────────────────
-   Archie's Armor: colors from the shield logo
-   ───────────────────────────────────────────────────────────── */
+/* Archie's Armor: colors from the shield logo */
 :root {
   --navy: #1b3a6b;          /* shield navy */
   --navy-dark: #142c52;
@@ -55,7 +53,7 @@ img { max-width: 100%; height: auto; display: block; }
 .skip-link { position: absolute; left: -999px; top: 0; background: var(--navy); color: #fff; padding: 0.5rem 1rem; z-index: 100; }
 .skip-link:focus { left: 0; }
 
-/* ───────── Buttons ───────── */
+/* Buttons */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
   padding: 0.75rem 1.5rem;
@@ -83,7 +81,7 @@ img { max-width: 100%; height: auto; display: block; }
 .btn-lg { padding: 1rem 2rem; font-size: 1rem; font-weight: 700; }
 .btn-block { display: flex; width: 100%; border-radius: 12px; }
 
-/* ───────── Announcement bar ───────── */
+/* Announcement bar */
 .announce {
   background: var(--gold);
   color: #0f172a;
@@ -95,7 +93,7 @@ img { max-width: 100%; height: auto; display: block; }
 .announce a { color: inherit; font-weight: 700; margin-left: 0.5rem; }
 .announce a:hover { color: #fff; }
 
-/* ───────── Navigation ───────── */
+/* Navigation */
 .nav {
   position: sticky; top: 0; z-index: 40;
   background: rgba(255, 255, 255, 0.95);
@@ -140,7 +138,7 @@ img { max-width: 100%; height: auto; display: block; }
   .nav-links .btn { margin: 0.75rem 0 0; border-radius: 12px; padding: 0.85rem; }
 }
 
-/* ───────── Hero ───────── */
+/* Hero */
 .hero {
   background-color: var(--navy);
   background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
@@ -236,7 +234,7 @@ img { max-width: 100%; height: auto; display: block; }
   .hero-badge { right: 50%; transform: translateX(50%); white-space: nowrap; }
 }
 
-/* ───────── Sections ───────── */
+/* Sections */
 .section { padding: 5rem 0; }
 .section-white { background: #fff; }
 .section-grey  { background: var(--bg-grey); }
@@ -249,7 +247,7 @@ img { max-width: 100%; height: auto; display: block; }
 .kicker { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
 .divider { width: 64px; height: 4px; background: var(--gold); border-radius: 999px; margin: 1rem auto 0; }
 
-/* ───────── Story ───────── */
+/* Story */
 .story-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 3rem; align-items: center; }
 .story-side > * + * { margin-top: 1.5rem; }
 
@@ -303,7 +301,7 @@ img { max-width: 100%; height: auto; display: block; }
   .mini-cards { grid-template-columns: 1fr; }
 }
 
-/* ───────── Cards ───────── */
+/* Cards */
 .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 .card {
   background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
@@ -351,7 +349,7 @@ img { max-width: 100%; height: auto; display: block; }
   .compare-grid { grid-template-columns: 1fr; }
 }
 
-/* ───────── Roadmap ───────── */
+/* Roadmap */
 .roadmap { list-style: none; margin: 0 auto; padding: 0; max-width: 56rem; position: relative; }
 .roadmap::before {
   content: ""; position: absolute; top: 0; bottom: 0; left: 50%;
@@ -446,7 +444,7 @@ img { max-width: 100%; height: auto; display: block; }
   .resource-banner { flex-direction: column; text-align: center; }
 }
 
-/* ───────── Updates ───────── */
+/* Updates */
 .updates-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 3rem; }
 .updates-head h2 { font-size: clamp(1.9rem, 3.5vw, 2.4rem); margin-top: 0.25rem; }
 .updates-head p { max-width: 28rem; margin: 0; font-size: 0.9rem; color: var(--text-muted); }
@@ -478,7 +476,7 @@ img { max-width: 100%; height: auto; display: block; }
   .updates-head { flex-direction: column; align-items: flex-start; }
 }
 
-/* ───────── Donate ───────── */
+/* Donate */
 .donate-section { border-top: 1px solid var(--border); }
 .donate-grid { display: grid; grid-template-columns: 7fr 5fr; gap: 3rem; align-items: center; }
 .donate-card {
@@ -523,7 +521,7 @@ img { max-width: 100%; height: auto; display: block; }
   .donate-grid { grid-template-columns: 1fr; }
 }
 
-/* ───────── Footer ───────── */
+/* Footer */
 .footer { background: var(--navy-deep); color: #94a3b8; padding: 3rem 0; border-top: 1px solid #1e293b; font-size: 0.8rem; }
 .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 3rem; }
 .footer-brand { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
