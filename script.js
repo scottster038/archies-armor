@@ -11,7 +11,7 @@ const SITE = {
   supporters: null,
 
   // Shows the "Contact Us" card when set, e.g. "family@example.com".
-  contactEmail: "family@archiesarmor.com",
+  contactEmail: "archiesarmor@gmail.com",
 
   // Family Journal: the Google Sheet's "Publish to web" CSV link
   // (File → Share → Publish to web → choose the sheet → "Comma-separated values (.csv)").
@@ -193,22 +193,46 @@ loadUpdates();
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // Share button: native share sheet on phones, copy link on desktop.
-const shareStatus = document.getElementById("share-status");
-document.getElementById("share-button").addEventListener("click", async () => {
-  const shareData = {
-    title: "Archie's Armor",
-    text: "Help fund personalized genetic medicine for Archie's rare CACNA1A variant.",
-    url: window.location.href.split("#")[0],
-  };
+// Share icons appear in the Spread the Word card and in the footer.
+// Facebook and X are plain links in index.html. Instagram has no web share link,
+// so its button copies the site link for pasting into a story, bio or message.
+const SHARE_URL = "https://www.archiesarmor.com/";
+const cardShareStatus = document.getElementById("share-status");
+let shareStatusTimer;
+
+function showShareStatus(statusEl, message, ms = 2500) {
+  statusEl.textContent = message;
+  clearTimeout(shareStatusTimer);
+  shareStatusTimer = setTimeout(() => (statusEl.textContent = ""), ms);
+}
+
+async function copyShareLink(statusEl, successMessage, ms) {
   try {
-    if (navigator.share) {
-      await navigator.share(shareData);
-    } else {
-      await navigator.clipboard.writeText(shareData.url);
-      shareStatus.textContent = "Link copied!";
-      setTimeout(() => (shareStatus.textContent = ""), 2500);
-    }
+    await navigator.clipboard.writeText(SHARE_URL);
+    showShareStatus(statusEl, successMessage, ms);
+  } catch {
+    // Clipboard blocked (old browser or not https): show the link to copy by hand.
+    showShareStatus(statusEl, "Copy this link: " + SHARE_URL, 8000);
+  }
+}
+
+document.getElementById("share-button").addEventListener("click", async () => {
+  if (!navigator.share) return copyShareLink(cardShareStatus, "Link copied!");
+  try {
+    await navigator.share({
+      title: "Archie's Armor",
+      text: "Help fund personalized genetic medicine for Archie's rare CACNA1A variant.",
+      url: SHARE_URL,
+    });
   } catch {
     // User closed the share sheet; nothing to do.
   }
+});
+
+// Each Instagram button reports in the status line named by its data-share-instagram attribute.
+document.querySelectorAll("[data-share-instagram]").forEach((button) => {
+  const statusEl = document.getElementById(button.dataset.shareInstagram);
+  button.addEventListener("click", () => {
+    copyShareLink(statusEl, "Link copied! Paste it into your Instagram story, bio or a message.", 5000);
+  });
 });
