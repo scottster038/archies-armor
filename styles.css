@@ -248,7 +248,9 @@ img { max-width: 100%; height: auto; display: block; }
 .divider { width: 64px; height: 4px; background: var(--gold); border-radius: 999px; margin: 1rem auto 0; }
 
 /* Story */
-.story-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 3rem; align-items: center; }
+.story-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 3rem; align-items: start; }
+/* The story is long, so the photo and quote stay in view beside it on wide screens. */
+.story-side { position: sticky; top: 6rem; }
 .story-side > * + * { margin-top: 1.5rem; }
 
 .photo-frame {
@@ -293,9 +295,11 @@ img { max-width: 100%; height: auto; display: block; }
 .mini-card h4 { color: var(--navy); font-size: 1.05rem; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem; }
 .mini-card h4 i { color: var(--gold); }
 .mini-card p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+.mini-card.wide { grid-column: 1 / -1; }
 
 @media (max-width: 960px) {
   .story-grid { grid-template-columns: 1fr; }
+  .story-side { position: static; }
 }
 @media (max-width: 560px) {
   .mini-cards { grid-template-columns: 1fr; }
