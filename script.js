@@ -216,23 +216,47 @@ async function copyShareLink(statusEl, successMessage, ms) {
   }
 }
 
+const SHARE_DATA = {
+  title: "Archie's Armor",
+  text: "Help fund personalized genetic medicine for Archie's rare CACNA1A variant.",
+  url: SHARE_URL,
+};
+
+// Opens the phone's share sheet, which hands off to the installed apps.
+// Returns false only if the sheet could not open (closing it counts as success).
+async function openShareSheet() {
+  try {
+    await navigator.share(SHARE_DATA);
+    return true;
+  } catch (err) {
+    return err.name === "AbortError";
+  }
+}
+
+// On phones and tablets the icons open the share sheet instead of the web pages,
+// because a website cannot open a specific app's share screen directly.
+const useShareSheet = Boolean(navigator.share) && window.matchMedia("(pointer: coarse)").matches;
+
 document.getElementById("share-button").addEventListener("click", async () => {
   if (!navigator.share) return copyShareLink(cardShareStatus, "Link copied!");
-  try {
-    await navigator.share({
-      title: "Archie's Armor",
-      text: "Help fund personalized genetic medicine for Archie's rare CACNA1A variant.",
-      url: SHARE_URL,
-    });
-  } catch {
-    // User closed the share sheet; nothing to do.
-  }
+  await openShareSheet();
 });
+
+// Facebook and X icons: share sheet on phones, the plain web link everywhere else.
+if (useShareSheet) {
+  document.querySelectorAll(".share-links a, .footer-social a").forEach((link) => {
+    link.addEventListener("click", async (event) => {
+      event.preventDefault();
+      if (!(await openShareSheet())) window.location.href = link.href;
+    });
+  });
+}
 
 // Each Instagram button reports in the status line named by its data-share-instagram attribute.
 document.querySelectorAll("[data-share-instagram]").forEach((button) => {
   const statusEl = document.getElementById(button.dataset.shareInstagram);
-  button.addEventListener("click", () => {
+  button.addEventListener("click", async () => {
+    if (useShareSheet && (await openShareSheet())) return;
     copyShareLink(statusEl, "Link copied! Paste it into your Instagram story, bio or a message.", 5000);
   });
 });
