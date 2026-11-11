@@ -507,6 +507,15 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .share-card h3 { color: #fff; font-size: 1.6rem; margin-bottom: 0.75rem; }
 .share-card p { font-size: 0.85rem; color: #cbd5e1; margin-bottom: 1.25rem; }
+.share-links { display: flex; justify-content: center; gap: 0.75rem; margin-top: 1rem; }
+.share-link {
+  width: 44px; height: 44px; border-radius: 50%; border: 0; cursor: pointer;
+  display: grid; place-items: center; font-size: 1.1rem; text-decoration: none;
+  background: rgba(255,255,255,0.1); color: #fff;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.share-link:hover { background: var(--gold); color: #0f172a; transform: translateY(-1px); }
+.share-link:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .share-status { display: block; min-height: 1.4em; margin-top: 0.5rem; text-align: center; font-size: 0.8rem; font-weight: 600; color: var(--gold-light); }
 
 .contact-card {
@@ -535,6 +544,15 @@ img { max-width: 100%; height: auto; display: block; }
 .footer-cite { font-size: 0.65rem; }
 .footer-bottom { padding-top: 2rem; border-top: 1px solid #1e293b; text-align: center; color: #64748b; }
 .footer-bottom p { margin: 0; }
+.footer-social { display: flex; justify-content: center; gap: 0.75rem; margin-top: 1.25rem; }
+.footer-social a, .footer-social button {
+  width: 40px; height: 40px; border-radius: 50%; border: 0; cursor: pointer;
+  display: grid; place-items: center; font-size: 1rem;
+  background: rgba(255,255,255,0.06); color: #cbd5e1;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.footer-social a:hover, .footer-social button:hover { background: var(--gold); color: #0f172a; }
+.footer-social a:focus-visible, .footer-social button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 
 @media (max-width: 900px) {
   .footer-grid { grid-template-columns: 1fr 1fr; }
