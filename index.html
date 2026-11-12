@@ -139,14 +139,12 @@
         <div class="story-grid">
           <div class="story-side">
             <figure class="photo-frame">
-              <!-- TODO: replace this placeholder with a real photo:
-                   <img src="images/archie.jpg" alt="Archie smiling" /> -->
-              <div class="photo-placeholder">
-                <div class="photo-icon"><i class="fa-solid fa-child-reaching"></i></div>
-                <h3>Archie</h3>
-                <span class="kicker">Warrior &amp; Inspiration</span>
-                <p>Our sweet, resilient boy.</p>
-              </div>
+              <!-- Photos wrapped in <a class="zoom"> open full-size in the photo viewer when tapped. -->
+              <a class="zoom" href="assets/archie-cap-web.jpg">
+                <img src="assets/archie-cap-web.jpg" alt="Archie smiling at the camera in a backwards navy cap and a striped hoodie" width="1000" height="1333" loading="lazy" />
+                <span class="zoom-hint" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+              </a>
+              <figcaption>Our sweet, resilient boy.</figcaption>
             </figure>
 
             <blockquote class="quote-card">
@@ -162,6 +160,14 @@
             <!-- Story text supplied by Archie's family. The highlighted boxes repeat facts
                  from the paragraphs, so keep the two in step when editing. -->
             <h3>A Fighter From the Very Beginning</h3>
+            <!-- The hospital wristbands in this photo are blurred on purpose (they showed a name and record numbers). -->
+            <figure class="story-photo">
+              <a class="zoom" href="assets/archie-nicu-web.jpg">
+                <img src="assets/archie-nicu-web.jpg" alt="Newborn Archie asleep in a NICU bed, with EEG leads wrapped around his head and monitoring lines attached" width="1000" height="1291" loading="lazy" />
+                <span class="zoom-hint" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+              </a>
+              <figcaption>Archie in the NICU in his first days of life.</figcaption>
+            </figure>
             <p>
               Our journey with Archie began on the day he was born. Following a delivery with
               no prior warning signs, the umbilical cord was found wrapped tightly around his
@@ -202,7 +208,10 @@
               Diagnosed with epilepsy, we held onto hope that he would eventually outgrow it.
             </p>
             <figure class="story-photo">
-              <img src="assets/archie-first-gtc-web.jpg" alt="Archie asleep in a hospital bed under a blanket, with an oxygen tube and an IV line" width="1000" height="1333" loading="lazy" />
+              <a class="zoom" href="assets/archie-first-gtc-web.jpg">
+                <img src="assets/archie-first-gtc-web.jpg" alt="Archie asleep in a hospital bed under a blanket, with an oxygen tube and an IV line" width="1000" height="1333" loading="lazy" />
+                <span class="zoom-hint" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+              </a>
               <figcaption>Archie in the hospital after his first tonic-clonic seizure.</figcaption>
             </figure>
             <p>
@@ -234,6 +243,13 @@
               coordination lasting one to five minutes a few times a month, accompanied by
               sudden falls where his reflexes failed to catch him.
             </p>
+            <figure class="story-photo wide">
+              <a class="zoom" href="assets/archie-eeg-web.jpg">
+                <img src="assets/archie-eeg-web.jpg" alt="Archie asleep in a hospital crib, his head wrapped in gauze covering EEG leads" width="1200" height="904" loading="lazy" />
+                <span class="zoom-hint" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+              </a>
+              <figcaption>Archie resting in the hospital during an EEG.</figcaption>
+            </figure>
             <p>
               On New Year’s Day 2026&mdash;just the day before his second birthday&mdash;Archie
               suddenly lost the ability to sit up or walk. Rushing him to the ER, we underwent
@@ -318,6 +334,22 @@
               contribution, share, and prayer brings Archie one step closer to the treatment
               that can save his life.
             </p>
+            <div class="photo-pair">
+              <figure>
+                <a class="zoom" href="assets/archie-smile-web.jpg">
+                  <img src="assets/archie-smile-web.jpg" alt="Archie grinning at the camera with spiky hair, wearing a bib" width="896" height="1195" loading="lazy" />
+                  <span class="zoom-hint" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                </a>
+                <figcaption>Archie, all smiles.</figcaption>
+              </figure>
+              <figure>
+                <a class="zoom" href="assets/family-web.jpg">
+                  <img class="family-photo" src="assets/family-web.jpg" alt="Archie held by his dad, standing with his mom and two big sisters on a tree-lined path" width="867" height="1821" loading="lazy" />
+                  <span class="zoom-hint" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                </a>
+                <figcaption>Archie with his mom, dad and big sisters.</figcaption>
+              </figure>
+            </div>
             <p><strong>Thank you from the bottom of our hearts for walking this journey with us.</strong></p>
           </div>
         </div>
@@ -591,6 +623,17 @@
       <span class="share-status" id="footer-share-status" role="status"></span>
     </div>
   </footer>
+
+  <!-- Photo viewer: opens when a story photo is tapped (see "Photo viewer" in script.js) -->
+  <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+    <button class="lightbox-btn lightbox-close" type="button" aria-label="Close photo"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    <button class="lightbox-btn lightbox-prev" type="button" aria-label="Previous photo"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+    <button class="lightbox-btn lightbox-next" type="button" aria-label="Next photo"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+    <figure class="lightbox-figure">
+      <img id="lightbox-img" src="" alt="" />
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+  </dialog>
 
   <script src="script.js"></script>
 </body>
