@@ -288,7 +288,8 @@ img { max-width: 100%; height: auto; display: block; }
   border: 1px solid var(--border); border-radius: var(--radius);
   box-shadow: 0 20px 40px rgba(27, 58, 107, 0.15), 0 0 0 6px rgba(201, 162, 75, 0.08);
 }
-.photo-frame img { border-radius: 12px; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.photo-frame img { border-radius: 12px; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 12%; }
+.photo-frame figcaption { margin-top: 0.6rem; text-align: center; font: italic 400 0.95rem var(--font-serif); color: var(--navy); }
 .photo-placeholder {
   aspect-ratio: 4 / 3; border-radius: 12px;
   background: linear-gradient(135deg, var(--navy), #1e293b, var(--navy-deep));
@@ -323,7 +324,27 @@ img { max-width: 100%; height: auto; display: block; }
 .story-photo { float: right; width: min(42%, 260px); margin: 0.25rem 0 1rem 1.5rem; }
 .story-photo img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow); }
 .story-photo figcaption { margin-top: 0.5rem; font-size: 0.75rem; font-style: italic; color: var(--text-muted); text-align: center; }
-.story-text h3, .mini-cards { clear: both; }
+.story-photo.wide { width: min(52%, 340px); }   /* landscape photos */
+.story-text h3, .mini-cards, .photo-pair { clear: both; }
+
+/* Two photos side by side */
+.photo-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+.photo-pair figure { margin: 0; }
+.photo-pair img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow); }
+.photo-pair .family-photo { object-position: center 48%; }
+.photo-pair figcaption { margin-top: 0.5rem; font-size: 0.75rem; font-style: italic; color: var(--text-muted); text-align: center; }
+
+/* Tappable photos: open in the photo viewer */
+.zoom { position: relative; display: block; border-radius: 12px; cursor: zoom-in; }
+.zoom:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.zoom-hint {
+  position: absolute; right: 0.5rem; bottom: 0.5rem;
+  width: 30px; height: 30px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 0.75rem;
+  background: rgba(15, 34, 64, 0.6); color: #fff;
+  transition: background 0.2s;
+}
+.zoom:hover .zoom-hint { background: var(--gold); color: #0f172a; }
 
 .mini-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
 .mini-card { background: var(--bg-light); border: 1px solid var(--border); border-radius: 12px; padding: 1rem; }
@@ -338,7 +359,45 @@ img { max-width: 100%; height: auto; display: block; }
 }
 @media (max-width: 560px) {
   .story-photo { float: none; width: 100%; max-width: 320px; margin: 1.25rem auto; }
+  .story-photo.wide { width: 100%; max-width: 420px; }
   .mini-cards { grid-template-columns: 1fr; }
+}
+
+/* Photo viewer (full-screen, opened by tapping a story photo) */
+html.lightbox-open { overflow: hidden; }
+.lightbox {
+  width: 100vw; height: 100vh; height: 100dvh; max-width: none; max-height: none;
+  margin: 0; padding: 0; border: 0; background: transparent; overflow: hidden;
+}
+.lightbox::backdrop { background: rgba(10, 23, 44, 0.97); }
+.lightbox-figure {
+  margin: 0; height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.9rem;
+  padding: 4rem 1rem 1.5rem;
+}
+.lightbox-figure img {
+  width: auto; height: auto; max-width: min(100%, 1000px); max-height: calc(100% - 3.5rem);
+  object-fit: contain; border-radius: 12px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+.lightbox-figure figcaption { max-width: 40rem; text-align: center; font: italic 400 1rem/1.4 var(--font-serif); color: #e2e8f0; }
+.lightbox-btn {
+  position: absolute; z-index: 1;
+  width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.25);
+  display: grid; place-items: center; font-size: 1.1rem; cursor: pointer;
+  background: rgba(15, 34, 64, 0.75); color: #fff;
+  transition: background 0.2s, color 0.2s;
+}
+.lightbox-btn:hover { background: var(--gold); color: #0f172a; }
+.lightbox-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.lightbox-close { top: 0.75rem; right: 0.75rem; }
+.lightbox-prev  { left: 0.75rem; top: 50%; transform: translateY(-50%); }
+.lightbox-next  { right: 0.75rem; top: 50%; transform: translateY(-50%); }
+@media (max-width: 560px) {
+  /* On phones the arrows sit below the photo so they never cover it. */
+  .lightbox-figure { padding-bottom: 4.5rem; }
+  .lightbox-prev, .lightbox-next { top: auto; bottom: 0.9rem; transform: none; }
+  .lightbox-prev { left: calc(50% - 56px); }
+  .lightbox-next { right: calc(50% - 56px); }
 }
 
 /* Cards */

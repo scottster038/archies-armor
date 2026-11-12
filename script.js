@@ -189,6 +189,64 @@ async function loadUpdates() {
 }
 loadUpdates();
 
+// Photo viewer: tapping a story photo (any <a class="zoom">) opens it full-size.
+// Arrow buttons, arrow keys or a swipe move between photos; the X, Esc or a tap
+// outside the photo closes it.
+const lightbox = document.getElementById("lightbox");
+if (lightbox && typeof lightbox.showModal === "function") {
+  const zoomLinks = [...document.querySelectorAll("a.zoom")];
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxCaption = document.getElementById("lightbox-caption");
+  let current = 0;
+
+  const showPhoto = (index) => {
+    current = (index + zoomLinks.length) % zoomLinks.length;
+    const link = zoomLinks[current];
+    const caption = link.closest("figure")?.querySelector("figcaption");
+    lightboxImg.src = link.href;
+    lightboxImg.alt = link.querySelector("img").alt;
+    lightboxCaption.textContent = caption ? caption.textContent : "";
+  };
+
+  zoomLinks.forEach((link, index) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      showPhoto(index);
+      lightbox.showModal();
+      document.documentElement.classList.add("lightbox-open");
+    });
+  });
+
+  lightbox.addEventListener("close", () => {
+    document.documentElement.classList.remove("lightbox-open");
+    zoomLinks[current].focus({ preventScroll: true });
+  });
+  lightbox.querySelector(".lightbox-close").addEventListener("click", () => lightbox.close());
+  lightbox.querySelector(".lightbox-prev").addEventListener("click", () => showPhoto(current - 1));
+  lightbox.querySelector(".lightbox-next").addEventListener("click", () => showPhoto(current + 1));
+
+  // A tap on the dark area around the photo closes the viewer.
+  lightbox.addEventListener("click", (event) => {
+    if (!event.target.closest("img, button, figcaption")) lightbox.close();
+  });
+  lightbox.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") showPhoto(current - 1);
+    if (event.key === "ArrowRight") showPhoto(current + 1);
+  });
+
+  // Swipe left or right on a phone to change photos.
+  let touchStartX = null;
+  lightbox.addEventListener("touchstart", (event) => {
+    touchStartX = event.touches.length === 1 ? event.touches[0].clientX : null;
+  }, { passive: true });
+  lightbox.addEventListener("touchend", (event) => {
+    if (touchStartX === null) return;
+    const moved = event.changedTouches[0].clientX - touchStartX;
+    touchStartX = null;
+    if (Math.abs(moved) > 50) showPhoto(current + (moved < 0 ? 1 : -1));
+  });
+}
+
 // Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
 
