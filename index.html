@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Security policy: the page may only load code, styles, fonts and data from the places
+       listed here. If you add a new outside service (a font, a script, an embed), add its
+       address to the matching list or the browser will block it. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src https://docs.google.com https://*.googleusercontent.com; base-uri 'self'; form-action 'none'; object-src 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>Archie's Armor | CACNA1A Rare Disease Advocacy &amp; Hope</title>
   <meta name="description" content="Archie's story with CACNA1A and his personalized ASO treatment. Donations are processed securely through Rare Village Foundation." />
 
@@ -20,7 +25,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300&display=swap" rel="stylesheet" />
   <!-- Icons: browse https://fontawesome.com/search?ic=free and swap the class names -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <!-- The integrity hash makes the browser refuse this file if the CDN copy is ever altered.
+       If you change the Font Awesome version, copy the new hash from cdnjs.com. -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
