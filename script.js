@@ -29,6 +29,11 @@ if (SITE.donateUrl) {
     link.target = "_blank";
     link.rel = "noopener noreferrer";
   });
+} else {
+  // No donation page yet: swap in the "opening soon" versions (marked data-donate-pending)
+  // and hide the ones that assume donating works (marked data-donate-live).
+  document.querySelectorAll("[data-donate-live]").forEach((el) => (el.hidden = true));
+  document.querySelectorAll("[data-donate-pending]").forEach((el) => (el.hidden = false));
 }
 
 // Fundraising stats and progress bar
@@ -244,6 +249,48 @@ if (lightbox && typeof lightbox.showModal === "function") {
     const moved = event.changedTouches[0].clientX - touchStartX;
     touchStartX = null;
     if (Math.abs(moved) > 50) showPhoto(current + (moved < 0 ? 1 : -1));
+  });
+}
+
+// "Learn more" pop-up for the three tiles in Understanding CACNA1A.
+// Each tile button has data-learn="x"; its text lives in <template id="learn-x"> in index.html.
+const learnDialog = document.getElementById("learn-dialog");
+if (learnDialog && typeof learnDialog.showModal === "function") {
+  const tiles = [...document.querySelectorAll("[data-learn]")];
+  const learnTitle = document.getElementById("learn-title");
+  const learnIcon = document.getElementById("learn-icon");
+  const learnBody = document.getElementById("learn-body");
+  const learnNext = learnDialog.querySelector(".learn-next");
+  let learnIndex = 0;
+
+  const showLearn = (index) => {
+    learnIndex = (index + tiles.length) % tiles.length;
+    const template = document.getElementById("learn-" + tiles[learnIndex].dataset.learn);
+    learnTitle.textContent = template.dataset.title;
+    learnIcon.className = "fa-solid " + template.dataset.icon;
+    learnBody.replaceChildren(template.content.cloneNode(true));
+    learnBody.scrollTop = 0;
+    const nextTitle = document.getElementById("learn-" + tiles[(learnIndex + 1) % tiles.length].dataset.learn).dataset.title;
+    learnNext.firstChild.textContent = "Next: " + nextTitle + " ";
+  };
+
+  tiles.forEach((tile, index) => {
+    tile.addEventListener("click", () => {
+      showLearn(index);
+      learnDialog.showModal();
+      document.documentElement.classList.add("learn-open");
+    });
+  });
+
+  learnDialog.addEventListener("close", () => {
+    document.documentElement.classList.remove("learn-open");
+    tiles[learnIndex].focus({ preventScroll: true });
+  });
+  learnDialog.querySelector(".learn-close").addEventListener("click", () => learnDialog.close());
+  learnNext.addEventListener("click", () => showLearn(learnIndex + 1));
+  learnDialog.addEventListener("click", (event) => {
+    if (event.target === learnDialog) learnDialog.close();      // tap on the dark backdrop
+    if (event.target.closest("a[href^='#']")) learnDialog.close(); // in-page link, e.g. to the roadmap
   });
 }
 
