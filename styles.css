@@ -423,6 +423,108 @@ html.lightbox-open { overflow: hidden; }
   .cards-3 { grid-template-columns: 1fr; gap: 1.25rem; }
 }
 
+/* Tiles that open a pop-up with more detail */
+.card:has(.card-link) { padding: 0; }
+.card-link {
+  all: unset; box-sizing: border-box; cursor: pointer;
+  display: flex; flex-direction: column; flex: 1; width: 100%; padding: 2rem;
+  border-radius: var(--radius);
+}
+.card-link h3 { font: inherit; font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem; }
+.card-link p { font-size: 0.9rem; color: var(--text-muted); margin: 0 0 1rem; }
+.card-link .card-icon { margin-bottom: 1.5rem; }
+.card-link .card-foot { display: block; }
+.card-link .card-foot i { transition: transform 0.2s; }
+.card-link:hover .card-foot i { transform: translateX(4px); }
+.card-link:focus-visible { outline: 3px solid var(--gold); outline-offset: -3px; }
+.card:has(.card-link):hover { transform: translateY(-3px); }
+.card { transition: box-shadow 0.2s, transform 0.2s; }
+
+/* Gene explainer: lead sentence, two pictures, effects list */
+.gene-lead {
+  max-width: 50rem; margin: 0 auto 2.5rem; text-align: center;
+  font-size: 1.15rem; line-height: 1.7; color: var(--text);
+}
+.gene-figures { display: grid; grid-template-columns: 5fr 6fr; gap: 2rem; align-items: stretch; }
+.gene-fig {
+  margin: 0; background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 1.5rem; box-shadow: var(--shadow); display: flex; flex-direction: column;
+}
+.gene-fig svg { width: 100%; height: auto; display: block; margin-bottom: 1rem; }
+.gene-fig figcaption { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; margin-top: auto; }
+.gene-fig figcaption strong { display: block; color: var(--navy); font-size: 1rem; margin-bottom: 0.25rem; }
+
+.gene-effects { margin: 2rem 0 3.5rem; text-align: center; }
+.gene-effects h3 { font-size: 1.3rem; margin-bottom: 1rem; }
+.gene-effects ul { list-style: none; margin: 0 0 1rem; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; }
+.gene-effects li {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: #fff; border: 1px solid var(--border); border-radius: 999px;
+  padding: 0.5rem 1rem; font-size: 0.9rem; font-weight: 500; color: var(--navy);
+}
+.gene-effects li i { color: var(--gold); }
+.gene-effects p { margin: 0; color: var(--text-muted); font-size: 0.95rem; }
+.gene-more-title { text-align: center; font-size: 1.5rem; margin-bottom: 1.5rem; }
+
+/* Calcium animation (turned off for people who prefer less motion) */
+.cerebellum { animation: glow 3s ease-in-out infinite; }
+@keyframes glow { 50% { filter: drop-shadow(0 0 8px rgba(201, 162, 75, 0.9)); } }
+.wait { animation: bob 2.4s ease-in-out infinite; }
+@keyframes bob { 50% { transform: translateY(-6px); } }
+.flow { animation: pour 2.7s linear infinite; opacity: 0; }
+@keyframes pour {
+  0%   { transform: translateY(0);     opacity: 0; }
+  10%  { opacity: 1; }
+  70%  { transform: translateY(125px); opacity: 1; }
+  100% { transform: translateY(165px); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cerebellum, .wait { animation: none; }
+  .flow { animation: none; opacity: 1; }
+  .flow:nth-child(2n) { transform: translateY(50px); }
+  .flow:nth-child(3n) { transform: translateY(100px); }
+}
+
+@media (max-width: 900px) {
+  .gene-figures { grid-template-columns: 1fr; }
+}
+
+/* Detail pop-up */
+html.learn-open { overflow: hidden; }
+.learn-dialog {
+  width: min(42rem, calc(100vw - 2rem)); max-height: calc(100dvh - 2rem);
+  margin: auto; padding: 0; border: 0; border-radius: var(--radius-lg);
+  background: #fff; color: var(--text); box-shadow: 0 25px 60px rgba(15, 34, 64, 0.35);
+  overflow: hidden;
+}
+.learn-dialog[open] { display: flex; flex-direction: column; }
+.learn-dialog::backdrop { background: rgba(10, 23, 44, 0.75); }
+.learn-head {
+  display: flex; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border); background: var(--bg-light);
+}
+.learn-head .card-icon { margin: 0; width: 48px; height: 48px; flex: none; }
+.learn-head h3 { flex: 1; font-size: 1.4rem; margin: 0; }
+.learn-close {
+  all: unset; box-sizing: border-box; cursor: pointer; width: 40px; height: 40px; flex: none;
+  display: grid; place-items: center; border-radius: 50%; color: var(--text-muted);
+}
+.learn-close:hover { background: var(--bg-grey); color: var(--navy); }
+.learn-close:focus-visible { outline: 3px solid var(--gold); }
+.learn-body { padding: 1.5rem; overflow-y: auto; }
+.learn-body h4 { font-family: var(--font-serif); font-size: 1.1rem; color: var(--navy); margin: 1.5rem 0 0.4rem; }
+.learn-body h4:first-child { margin-top: 0; }
+.learn-body p, .learn-body li { font-size: 0.98rem; line-height: 1.7; color: #334155; }
+.learn-body p { margin: 0 0 0.5rem; }
+.learn-body ul { margin: 0.25rem 0 0.5rem; padding-left: 1.25rem; }
+.learn-body li + li { margin-top: 0.4rem; }
+.learn-body a { color: var(--navy); font-weight: 600; text-decoration: underline; }
+.learn-foot { padding: 1rem 1.5rem; border-top: 1px solid var(--border); text-align: right; }
+@media (max-width: 560px) {
+  .learn-head { padding: 1rem; }
+  .learn-body { padding: 1.25rem 1rem; }
+}
+
 /* Comparison box */
 .compare {
   margin-top: 3rem; background: #fff; border: 1px solid var(--border);
@@ -594,6 +696,13 @@ html.lightbox-open { overflow: hidden; }
 .trust-list { list-style: none; padding: 0; margin: 0 0 1.75rem; display: grid; gap: 0.5rem; }
 .trust-list li { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; color: #334155; }
 .trust-list i { color: var(--gold); width: 1.1rem; text-align: center; }
+button.btn:disabled { cursor: not-allowed; filter: grayscale(1); opacity: 0.55; box-shadow: none; }
+.donate-soon {
+  margin: 1rem 0 0; padding: 1rem 1.15rem; border-radius: 12px;
+  background: var(--bg-light); border: 1px solid var(--border);
+  font-size: 0.92rem; line-height: 1.6; color: #334155;
+}
+.donate-soon a { color: var(--navy); font-weight: 600; text-decoration: underline; }
 .fine-print { text-align: center; font-size: 0.75rem; color: #94a3b8; margin: 0.75rem 0 0; }
 .fine-print i { color: var(--gold); }
 
